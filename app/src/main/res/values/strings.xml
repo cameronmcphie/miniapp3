@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Mini App 1</string>
+    <string name="file_size">File Size:</string>
+    <string name="network_speed">Network Speed</string>
+    <string name="size_hint">Size in MiB</string>
+    <string name="speed_hint">Speed in Mbps</string>
+    <string name="speed_label">Transfer Time (in seconds)</string>
+    <string name="speed_value">0</string>
+    <string name="submitButton">Submit</string>
+</resources>
