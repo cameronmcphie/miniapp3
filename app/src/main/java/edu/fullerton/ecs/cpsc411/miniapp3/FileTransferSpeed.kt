@@ -6,13 +6,21 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import java.text.DecimalFormat
-import kotlinx.android.synthetic.main.activity_file_transfer_speed.*
+import kotlinx.android.synthetic.main.fragment_file_transfer_speed.*
+import android.support.v4.app.FragmentManager
 
 class FileTransferSpeed : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_file_transfer_speed)
+
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+
+       val fragment = CalculatorFragment()
+        fragmentTransaction.add(R.id.main_activity, fragment)
+        fragmentTransaction.commit()
 
         fileValue.onChange()
         speedValue.onChange()
