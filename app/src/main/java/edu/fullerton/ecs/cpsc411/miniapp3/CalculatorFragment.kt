@@ -8,8 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.TextView
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_file_transfer_speed.*
 import kotlinx.android.synthetic.main.fragment_file_transfer_speed.view.*
 import java.text.DecimalFormat
@@ -17,16 +15,34 @@ import java.text.DecimalFormat
 
 class CalculatorFragment : Fragment() {
 
+//    private var savedSpeed = 0
+//    private var savedSize = 0
+//    private var savedTime = 0.0
+//    private val savedSpeedKey = "savedSpeed"
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view  = inflater.inflate(R.layout.fragment_file_transfer_speed, container, false)
+//        if (savedInstanceState != null) {
+//            //var sv = savedInstanceState.getInt(savedSpeedKey).toString()
+//            view.fileValue.setText(savedInstanceState.getInt(savedSpeedKey))
+//        }
 
         view.fileValue.onChange(view)
         view.speedValue.onChange(view)
 
+        retainInstance = true
+
         return view
     }
+
+//    override fun onSaveInstanceState(outState: Bundle) {
+//        val savedSpeedString = fileValue.text.toString()
+//        val savedSpeed = savedSpeedString.toInt()
+//        outState.putInt(savedSpeedKey, savedSpeed)
+//        super.onSaveInstanceState(outState)
+//    }
 
     private fun calcTransferSpeed(v: View): Double {
         val sizeString = v.fileValue.text.toString()
