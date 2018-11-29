@@ -23,7 +23,6 @@ class FileTransferSpeed : AppCompatActivity() {
         val fragment = CalculatorFragment()
         fragmentTransaction.add(R.id.main_activity, fragment)
         fragmentTransaction.commit()
-
 //        fileValue.onChange()
 //        speedValue.onChange()
 
